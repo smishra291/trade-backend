@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String, Float
 from pydantic import BaseModel
 from app.database import Base
 
-# SQLAlchemy model for DB
 class Order(Base):
     __tablename__ = "orders"
 
@@ -12,7 +11,6 @@ class Order(Base):
     quantity = Column(Integer)
     order_type = Column(String)
 
-# Pydantic model for request/response validation
 class OrderCreate(BaseModel):
     symbol: str
     price: float

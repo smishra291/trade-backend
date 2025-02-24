@@ -6,7 +6,6 @@ from fastapi import WebSocket
 
 app = FastAPI()
 
-# Create database tables
 models.Base.metadata.create_all(bind=database.engine)
 
 @app.get("/")
