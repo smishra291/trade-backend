@@ -10,7 +10,7 @@ models.Base.metadata.create_all(bind=database.engine)
 
 @app.get("/")
 def read_root():
-    return {"message": " Deploy the code via CI/CD!"}
+    return {"message": " Deployed the code via CI/CD pipeline!"}
 
 @app.post("/orders", response_model=models.OrderResponse)
 def create_order(order: models.OrderCreate, db: Session = Depends(database.get_db)):
